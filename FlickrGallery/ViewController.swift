@@ -10,7 +10,7 @@ import Alamofire
 import ObjectMapper
 import Kingfisher
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
 
     
     @IBOutlet weak var textView: UITextField!
@@ -32,11 +32,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        self.textView.delegate = self
         self.textView.addTarget(self, action: #selector(self.textFieldDidChange(sender:)), for: .editingChanged)
     }
     
     @objc func textFieldDidChange(sender: UITextField){
         requestTest(searchWord: sender.text)
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        photos = []
+        self.collectionView.reloadData()
+        return true
     }
     
     func requestTest(searchWord: String?) {
