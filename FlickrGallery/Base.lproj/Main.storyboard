@@ -44,12 +44,18 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THx-J7-xvY">
+                                <rect key="frame" x="366" y="116" width="20" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="clear.fill" catalog="system"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="tpR-Hm-gb6"/>
                     <connections>
+                        <outlet property="clearTextFieldButton" destination="THx-J7-xvY" id="95U-td-QXp"/>
                         <outlet property="collectionView" destination="Njn-d9-H4h" id="ZOk-Oa-s65"/>
                         <outlet property="textView" destination="WSC-bg-WXj" id="Lpn-RA-9rq"/>
                     </connections>
@@ -94,6 +100,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="clear.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
