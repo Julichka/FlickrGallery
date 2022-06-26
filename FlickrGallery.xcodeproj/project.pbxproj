@@ -14,6 +14,7 @@
 		322857592867FFAB005A9BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 322857582867FFAB005A9BEE /* Assets.xcassets */; };
 		3228575C2867FFAB005A9BEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3228575A2867FFAB005A9BEE /* LaunchScreen.storyboard */; };
 		32285764286800E6005A9BEE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32285763286800E6005A9BEE /* DetailViewController.swift */; };
+		32285766286805A6005A9BEE /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32285765286805A6005A9BEE /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3228575B2867FFAB005A9BEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3228575D2867FFAB005A9BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32285763286800E6005A9BEE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		32285765286805A6005A9BEE /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				3228575A2867FFAB005A9BEE /* LaunchScreen.storyboard */,
 				3228575D2867FFAB005A9BEE /* Info.plist */,
 				32285763286800E6005A9BEE /* DetailViewController.swift */,
+				32285765286805A6005A9BEE /* ImageCollectionViewCell.swift */,
 			);
 			path = FlickrGallery;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				322857542867FFA8005A9BEE /* ViewController.swift in Sources */,
+				32285766286805A6005A9BEE /* ImageCollectionViewCell.swift in Sources */,
 				322857502867FFA8005A9BEE /* AppDelegate.swift in Sources */,
 				322857522867FFA8005A9BEE /* SceneDelegate.swift in Sources */,
 				32285764286800E6005A9BEE /* DetailViewController.swift in Sources */,
