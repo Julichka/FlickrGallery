@@ -38,6 +38,10 @@ class Photo: Mappable {
         title <- map["title"]
     }
     
+    func getImageUrl(size: String) -> String {
+        return "https://live.staticflickr.com/\(server ?? "")/\(id ?? "")_\(secret ?? "")_\(size).jpg"
+    }
+    
     var id: String?
     var secret: String?
     var server: String?

@@ -51,10 +51,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
-    func getImageUrl(serverId: String?, id: String?, secret: String?, size: String) -> String {
-        return "https://live.staticflickr.com/\(serverId ?? "")/\(id ?? "")_\(secret ?? "")_\(size).jpg"
-    }
-    
     func eraseSearch() {}
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -67,7 +63,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 
         let data = self.photos[indexPath.row]
         
-        let urlString = self.getImageUrl(serverId: data.server, id: data.id, secret: data.secret, size: "w")
+        let urlString = data.getImageUrl(size: "q")
         print(urlString)
         
         guard let url = URL.init(string: urlString) else {
@@ -81,11 +77,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? UICollectionViewCell,
+            let indexPath = self.collectionView.indexPath(for: cell) {
+
+             let vc = segue.destination as! DetailViewController
+             //Now simply set the title property of vc
+             vc.photo = photos[indexPath.row]
+         }
     }
-    
-    // override func prepare(for segue: UIStoryboardSegue, sender: Any?) {}
     
     func willDisplay() {}
     
