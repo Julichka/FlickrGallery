@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,8 @@
 		32285764286800E6005A9BEE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32285763286800E6005A9BEE /* DetailViewController.swift */; };
 		32285766286805A6005A9BEE /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32285765286805A6005A9BEE /* ImageCollectionViewCell.swift */; };
 		3228576828680684005A9BEE /* FlickrAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3228576728680684005A9BEE /* FlickrAPI.swift */; };
+		3228576B286814C8005A9BEE /* PhotosSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3228576A286814C8005A9BEE /* PhotosSearchResponse.swift */; };
+		3228576D286816EF005A9BEE /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3228576C286816EF005A9BEE /* SpinnerViewController.swift */; };
 		D9A04C0E37AF74E6A6E6B910 /* Pods_FlickrGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA3C85A9D04D385A671B997 /* Pods_FlickrGallery.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,8 @@
 		32285763286800E6005A9BEE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		32285765286805A6005A9BEE /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		3228576728680684005A9BEE /* FlickrAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrAPI.swift; sourceTree = "<group>"; };
+		3228576A286814C8005A9BEE /* PhotosSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosSearchResponse.swift; sourceTree = "<group>"; };
+		3228576C286816EF005A9BEE /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		8DA3C85A9D04D385A671B997 /* Pods_FlickrGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickrGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F24FB909DB3FF724888E0826 /* Pods-FlickrGallery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrGallery.release.xcconfig"; path = "Target Support Files/Pods-FlickrGallery/Pods-FlickrGallery.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +73,7 @@
 		3228574E2867FFA8005A9BEE /* FlickrGallery */ = {
 			isa = PBXGroup;
 			children = (
+				32285769286814A8005A9BEE /* model */,
 				3228574F2867FFA8005A9BEE /* AppDelegate.swift */,
 				322857512867FFA8005A9BEE /* SceneDelegate.swift */,
 				322857532867FFA8005A9BEE /* ViewController.swift */,
@@ -79,8 +84,17 @@
 				32285763286800E6005A9BEE /* DetailViewController.swift */,
 				32285765286805A6005A9BEE /* ImageCollectionViewCell.swift */,
 				3228576728680684005A9BEE /* FlickrAPI.swift */,
+				3228576C286816EF005A9BEE /* SpinnerViewController.swift */,
 			);
 			path = FlickrGallery;
+			sourceTree = "<group>";
+		};
+		32285769286814A8005A9BEE /* model */ = {
+			isa = PBXGroup;
+			children = (
+				3228576A286814C8005A9BEE /* PhotosSearchResponse.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		4411A2DDF8D3FFA626C74CFA /* Pods */ = {
@@ -89,7 +103,6 @@
 				1E2BE5A58A170927C1EA4D7B /* Pods-FlickrGallery.debug.xcconfig */,
 				F24FB909DB3FF724888E0826 /* Pods-FlickrGallery.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -219,8 +232,10 @@
 				32285766286805A6005A9BEE /* ImageCollectionViewCell.swift in Sources */,
 				322857502867FFA8005A9BEE /* AppDelegate.swift in Sources */,
 				3228576828680684005A9BEE /* FlickrAPI.swift in Sources */,
+				3228576D286816EF005A9BEE /* SpinnerViewController.swift in Sources */,
 				322857522867FFA8005A9BEE /* SceneDelegate.swift in Sources */,
 				32285764286800E6005A9BEE /* DetailViewController.swift in Sources */,
+				3228576B286814C8005A9BEE /* PhotosSearchResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
