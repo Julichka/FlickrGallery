@@ -14,7 +14,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     
     @IBOutlet weak var textView: UITextField!
-    @IBOutlet weak var clearTextFieldButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
     let cellReuseIdentifier = "CellItem"
@@ -25,16 +24,27 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var photos : Array<Photo> = []
     let childView = SpinnerViewController()
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        requestTest(searchWord: textField.text ?? "")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        
-        requestTest(searchWord: "cat")
+        self.textView.addTarget(self, action: #selector(self.textFieldDidChange(sender:)), for: .editingChanged)
     }
     
-    func requestTest(searchWord: String) {
-        let requestURL = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(API_KEY)&text=\(searchWord)&format=json&nojsoncallback=1"
+    @objc func textFieldDidChange(sender: UITextField){
+        requestTest(searchWord: sender.text)
+    }
+    
+    func requestTest(searchWord: String?) {
+        print(searchWord)
+        if (searchWord == nil) {
+            return
+        }
+        let requestURL = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(API_KEY)&text=\(searchWord ?? "")&format=json&nojsoncallback=1"
         
         AF.request(requestURL, method: .get).responseJSON { (responce) in
             switch responce.result {
@@ -42,9 +52,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 guard let castingValue = value as? [String: Any] else { return }
                 print(castingValue)
                 guard let data = Mapper<PhotosSearchResponse>().map(JSON: castingValue) else { return }
-                self.photos = (data.photos?.photo)!
-                print(self.photos.count)
-                self.collectionView.reloadData()
+                if (data.photos?.photo != nil) {
+                    self.photos = (data.photos?.photo!)!
+                    print(self.photos.count)
+                    self.collectionView.reloadData()
+                }
             case .failure(let error):
                 print(error.localizedDescription)
             }
